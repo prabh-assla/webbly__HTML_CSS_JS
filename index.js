@@ -4,69 +4,56 @@ var content = document.getElementById("content"),
 rotatum = document.getElementById("rotatum"),
 bio = document.getElementById("Bio"),
 contacts = document.getElementById("Contacts"),
-experience = document.getElementById("Experience");
+experience = document.getElementById("Experience"),
+projects = document.getElementById("Projects"),
+licenses = document.getElementById("Licenses");
 
-const displayerSetter = (el, display) => {
+const displaySet = (el, display) => {
     return el.style.display = display;
 }
 
-const displayer = (el) => {
+const displayGet = (el) => {
     return el.style.display;
 }
 
+const displayAlter = (el, value, ...others) => {
+    if(el){
+        if(displayGet(el) === "none"){
+            displaySet(content, "grid");
+            displaySet(rotatum, "block");
+            displaySet(el, value);
+        }
+        else{
+            displaySet(content, "none");
+            displaySet(rotatum, "none");
+            displaySet(el, "none");
+        }
+    }
+
+    for(let i of others)
+        displaySet(i, "none");
+}
+
 document.getElementById("home").addEventListener("click", function(){
-    displayerSetter(content, "none") ;
-    displayerSetter(rotatum, "none");
-    
-    displayerSetter(bio, "none");
-    displayerSetter(contacts, "none");
-    displayerSetter(experience, "none");
+    displayAlter(false, false, content, rotatum, bio, contacts, experience, projects, licenses);
 }, false)
 
 document.getElementById("bio").addEventListener("click", function(){
-    if(displayer(bio) === "none"){
-        displayerSetter(content, "grid");
-        displayerSetter(rotatum, "block");
-        displayerSetter(bio, "block");
-    }
-    else{
-        displayerSetter(content, "none");
-        displayerSetter(rotatum, "none");
-        displayerSetter(bio, "none");
-    }
-
-    displayerSetter(contacts, "none");
-    displayerSetter(experience, "none");
+    displayAlter(bio, "block", contacts, experience, projects, licenses);
 }, false)
 
 document.getElementById("contacts").addEventListener("click", function(){
-    if(displayer(contacts) === "none"){
-        displayerSetter(content, "grid");
-        displayerSetter(rotatum, "block");
-        displayerSetter(contacts, "flex");
-    }
-    else{
-        displayerSetter(content, "none");
-        displayerSetter(rotatum, "none");
-        displayerSetter(contacts, "none");
-    }
-    
-    displayerSetter(bio, "none");
-    displayerSetter(experience, "none");
+    displayAlter(contacts, "flex", bio, experience, projects, licenses);
 }, false)
 
 document.getElementById("experience").addEventListener("click", function(){
-    if(displayer(experience) === "none"){
-        displayerSetter(content, "grid");
-        displayerSetter(rotatum, "block");
-        displayerSetter(experience, "block");
-    }
-    else{
-        displayerSetter(content, "none");
-        displayerSetter(rotatum, "none");
-        displayerSetter(experience, "none");
-    }
-    
-    displayerSetter(contacts, "none");
-    displayerSetter(bio, "none");
+    displayAlter(experience, "block", bio, contacts, projects, licenses);
+}, false)
+
+document.getElementById("projects").addEventListener("click", function(){
+    displayAlter(projects, "block", bio, contacts, experience, licenses);
+}, false)
+
+document.getElementById("licenses").addEventListener("click", function(){
+    displayAlter(licenses, "block", bio, contacts, experience, projects);
 }, false)
