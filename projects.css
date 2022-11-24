@@ -11,8 +11,9 @@
     border-radius: 1em;
     overflow: auto;
     background-position: 50% 50%;
+    background-size: 5%;
+    background-image: url("./backgroundImages/piscesLOGO.svg");
     background-repeat: space;
-    background-size: 6%;
 }
 
 #Projects section:hover{
@@ -31,6 +32,10 @@
     border-radius: 50em;
     border-bottom-color: transparent;
     color: rgb(247, 181, 244);
+    background-image: url("./backgroundImages/aquariusLOGO.svg");
+    background-size: 8%;
+    background-repeat: space;
+    background-position: 50% 50%;
 }
 
 #Projects section h5{
