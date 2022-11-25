@@ -55,10 +55,19 @@ body{
     border-radius: 50%;
     grid-column: 3/ span 8;
     grid-row: 2/ span 11;
-    background-image: url("./icons/aries.svg");
-    background-size: 75%;
-    background-repeat: no-repeat;
+    background-image: url("./icons/aries.svg"), url("./icons/cancerLOGO.svg");
+    background-size: 75%, 2%;
+    background-repeat: no-repeat, repeat;
     background-position: 50% 40%;
+    border: 0.1em solid rgb(255, 102, 0);
+}
+
+.skullLogo:hover{
+    background-image: url("./icons/aries.svg"), url("./icons/scorpioLOGO.svg");
+    background-size: 75%, 2%;
+    background-repeat: no-repeat, repeat;
+    background-position: 50% 40%;
+    border: 0.1em solid rgb(156, 0, 0);
 }
 
 .content{

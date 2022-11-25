@@ -26,6 +26,9 @@
     background-size: 20px;
     background-repeat: space;
     transition: background-size 0s;
+    font-size: 2em;
+    font-weight: bolder;
+    vertical-align: middle;
 }
 
 #Contacts ul li:hover{
