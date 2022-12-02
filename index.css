@@ -9,6 +9,7 @@ body{
     background-image: url("./icons3/bodybackground.svg");
     background-size: 10%;
     background-repeat: space;
+    overflow: hidden;
 }
 
 .main{
@@ -37,7 +38,7 @@ body{
     margin: 0.2em;
     padding: 0.2em;
     border: 0.1em solid rgb(251, 251, 199);
-    border-radius: 0.5rem;
+    border-radius: 1vh;
     user-select: none;
 }
 
@@ -55,19 +56,17 @@ body{
     border-radius: 50%;
     grid-column: 3/ span 8;
     grid-row: 2/ span 11;
-    background-image: url("./icons/aries.svg"), url("./icons/cancerLOGO.svg");
+    background-image: url("./icons/aries.svg"), url("./icons/geminiLOGO.svg");
     background-size: 75%, 2%;
-    background-repeat: no-repeat, repeat;
+    background-repeat: space;
     background-position: 50% 40%;
-    border: 0.1em solid rgb(255, 102, 0);
+    border: 0.4vh solid rgb(211, 100, 10);
+    background-clip: padding-box;
+    backdrop-filter: blur(1px);
 }
 
 .skullLogo:hover{
-    background-image: url("./icons/aries.svg"), url("./icons/scorpioLOGO.svg");
-    background-size: 75%, 2%;
-    background-repeat: no-repeat, repeat;
-    background-position: 50% 40%;
-    border: 0.1em solid rgb(156, 0, 0);
+    background-image: url("./icons/aries.svg"), url("./icons/leoLOGO.svg");
 }
 
 .content{
@@ -84,6 +83,7 @@ body{
 
 .rotatum{
     display: none;
+    z-index: 0;
     grid-row: 3/ span 9;
     grid-column: 9/ span 4;
     background-color: rgb(194, 8, 8);
@@ -97,5 +97,11 @@ body{
     to{
         background-size: 20%;
         background-color: #f9b274;
+    }
+}
+
+@media (max-width: 1300px){
+    .navBar ul li{
+        font-size: 3vh;
     }
 }
