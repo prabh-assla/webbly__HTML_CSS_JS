@@ -3,7 +3,7 @@
     color: #fbfbc7;
     font-family: 'Exo 2', sans-serif;
     border: 0.3em double brown;
-    border-radius: 20px;
+    border-radius: 6vh;
     padding: 0.5em;
     background-image: url("./icons/virgoLOGO.svg");
     background-size: 10%;
@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-clip: padding-box;
 }
 
 #Contacts ul li{
@@ -58,4 +59,10 @@
     width: 5%;
     vertical-align: middle;
     margin: 0.2em;
+}
+
+@media (max-width: 900px){
+    #Contacts{
+        font-size: 3vh;
+    }
 }

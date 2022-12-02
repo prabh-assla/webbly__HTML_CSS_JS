@@ -86,3 +86,10 @@
 #Projects section:hover a{
     display: inline-block;
 }
+
+@media (max-width: 900px){
+    #Projects section:hover > h6{
+        margin: 0em 5em;
+        transition: margin 1s;
+    }
+}
